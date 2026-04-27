@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARINOS STAMATOPOULOS | ARCHITECT_OS</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #030304;
+            --accent: #00f2ff; 
+            --accent-glow: rgba(0, 242, 255, 0.15);
+            --text: #ffffff;
+            --transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- BACKGROUND ELEMENTS --- */
+        #cursor-glow {
+            position: fixed;
+            width: 40vw; height: 40vw;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        /* --- MOBILE GRID --- */
+        .grid-layer {
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 20px; left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            padding: 10px 25px;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex; gap: 20px;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 800;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        nav a:hover { opacity: 1; color: var(--accent); }
+
+        /* --- LAYOUT --- */
+        section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(2rem, 10vw, 6rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: transparent;
+            -webkit-text-stroke: 1px var(--accent);
+            transition: var(--transition);
+        }
+
+        .hero-title:hover .highlight {
+            color: var(--accent);
+            text-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        /* --- IOT CARD --- */
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            background: rgba(0, 242, 255, 0.03);
+            transform: translateY(-10px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* --- MEGA LINKS --- */
+        .mega-link {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(2rem, 8vw, 4rem);
+            color: var(--text);
+            text-decoration: none;
+            display: block;
+            margin: 20px 0;
+            transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .mega-link:hover {
+            transform: skewX(-5deg) translateX(30px);
+            color: var(--accent);
+        }
+
+        /* --- MOBILE ADAPTATIONS --- */
+        @media (max-width: 768px) {
+            nav { width: 90%; justify-content: center; top: 10px; }
+            .hero-title { font-size: 3rem; }
+            section { padding: 80px 20px; }
+            .card { padding: 30px; }
+            #cursor-glow { display: none; } /* Deactivate glow on mobile for performance */
+        }
+
+        /* --- REVEAL ANIMATION --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-layer"></div>
+    <div id="cursor-glow"></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#stack">Stack</a>
+        <a href="#iot">IoT Node</a>
+        <a href="#connect">Connect</a>
+    </nav>
+
+    <section id="home">
+        <div class="container reveal">
+            <p style="font-family: 'JetBrains Mono'; font-size: 12px; color: var(--accent); margin-bottom: 20px;">[ SYSTEM_INITIALIZED ]</p>
+            <h1 class="hero-title">MARINOS<br><span class="highlight">STAMATOPOULOS</span></h1>
+            <p style="max-width: 500px; opacity: 0.6; line-height: 1.8;">
+                Φοιτητής Πληροφορικής & Τηλεπικοινωνιών. <br>
+                Εξειδίκευση σε Software Architecture και Embedded IoT λύσεις.
+            </p>
+        </div>
+    </section>
+
+    <section id="stack">
+        <div class="container reveal">
+            <h2 style="font-family: 'Syncopate'; margin-bottom: 50px;">TECH_CORE</h2>
+            <div class="stats-grid">
+                <div class="card">
+                    <h3 style="font-size: 12px; color: var(--accent);">LOGIC</h3>
+                    <p style="margin-top: 15px; font-family: 'JetBrains Mono';">PYTHON / C++ / JAVA</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 12px; color: var(--accent);">SYSTEMS</h3>
+                    <p style="margin-top: 15px; font-family: 'JetBrains Mono';">LINUX / ESP32 / GIT</p>
+                </div>
+                <div class="card">
+                    <h3 style="font-size: 12px; color: var(--accent);">SECURITY</h3>
+                    <p style="margin-top: 15px; font-family: 'JetBrains Mono';">NETWORK MONITORING</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="iot">
+        <div class="container reveal">
+            <div class="card" style="border-left: 5px solid var(--accent);">
+                <span style="font-size: 10px; opacity: 0.5;">LIVE_TELEMETRY_STREAM</span>
+                <h2 style="font-family: 'Syncopate'; font-size: 2rem; margin: 15px 0;">IOT WEATHER STATION</h2>
+                <p style="opacity: 0.7; max-width: 600px;">Παρακολούθηση περιβαλλοντικών συνθηκών σε πραγματικό χρόνο μέσω δικτύου αισθητήρων.</p>
+                <div class="stats-grid">
+                    <div>
+                        <small style="font-family: 'JetBrains Mono';">TEMPERATURE</small>
+                        <div class="stat-val" id="temp-val">--.-°</div>
+                    </div>
+                    <div>
+                        <small style="font-family: 'JetBrains Mono';">HUMIDITY</small>
+                        <div class="stat-val" id="hum-val">--%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="connect">
+        <div class="container reveal">
+            <p style="font-family: 'JetBrains Mono'; color: var(--accent); margin-bottom: 20px;">// UPLINK_CHANNELS</p>
+            <a href="https://www.linkedin.com/in/marinosstamatopoulos/" target="_blank" class="mega-link">LINKED_IN</a>
+            <a href="https://github.com/MarStamSudo" target="_blank" class="mega-link highlight" style="-webkit-text-stroke: 1px var(--text);">GIT_HUB</a>
+            
+            <div style="margin-top: 80px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+                <p style="font-size: 12px; opacity: 0.4;">marinosstamatopoulos@gmail.com</p>
+                <p style="font-size: 10px; font-family: 'JetBrains Mono'; opacity: 0.2;">REVISION 6.0 // 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 1. Mouse Glow Effect (Only for Desktop)
+        const glow = document.getElementById('cursor-glow');
+        if (window.innerWidth > 768) {
+            window.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        }
+
+        // 2. Scroll Reveal Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 3. IoT Data Simulation
+        function updateIoT() {
+            const temp = (20 + Math.random() * 8).toFixed(1);
+            const hum = Math.floor(40 + Math.random() * 20);
+            
+            const tEl = document.getElementById('temp-val');
+            const hEl = document.getElementById('hum-val');
+
+            tEl.style.opacity = 0.3;
+            hEl.style.opacity = 0.3;
+
+            setTimeout(() => {
+                tEl.innerText = temp + "°";
+                hEl.innerText = hum + "%";
+                tEl.style.opacity = 1;
+                hEl.style.opacity = 1;
+            }, 300);
+        }
+
+        setInterval(updateIoT, 4000);
+        updateIoT(); // Initial call
+    </script>
+</body>
+</html>
