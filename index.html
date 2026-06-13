@@ -130,6 +130,9 @@
     .hero-name .outline {
       color: transparent;
       -webkit-text-stroke: 1.5px var(--gold);
+      font-size: clamp(1.6rem, 6.2vw, 7.5rem);
+      display: block;
+      word-break: break-word;
     }
 
     .hero-bio {
@@ -885,41 +888,60 @@
   <div class="wrap">
     <p class="section-label reveal">Connect</p>
     <h2 class="reveal" style="font-weight:800;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-0.02em;max-width:600px;line-height:1.1;">
-  Always curious.<br>
-  <span style="color:var(--gold);">Sometimes useful.</span>
-</h2>
+      Always curious.<br>
+      <span style="color:var(--gold);">Sometimes useful.</span>
+    </h2>
 
-<div class="connect-links reveal">
-  <a href="https://www.linkedin.com/in/marinosstamatopoulos/" target="_blank" class="connect-link">
-    <div>
-      <p class="connect-link-meta">Professional network</p>
-      <p class="connect-link-name">LinkedIn</p>
+    <div class="connect-links reveal">
+      <a href="https://www.linkedin.com/in/marinosstamatopoulos/" target="_blank" class="connect-link">
+        <div>
+          <p class="connect-link-meta">Professional network</p>
+          <p class="connect-link-name">LinkedIn</p>
+        </div>
+        <span class="connect-link-arrow">↗</span>
+      </a>
+      <a href="https://github.com/MarStamSudo" target="_blank" class="connect-link">
+        <div>
+          <p class="connect-link-meta">Open source work</p>
+          <p class="connect-link-name">GitHub</p>
+        </div>
+        <span class="connect-link-arrow">↗</span>
+      </a>
+      <div class="connect-link" style="cursor:pointer;" onclick="copyEmail()">
+        <div>
+          <p class="connect-link-meta">Direct line</p>
+          <p class="connect-link-name" id="email-label">Email</p>
+        </div>
+        <span class="connect-link-arrow">↗</span>
+      </div>
     </div>
-    <span class="connect-link-arrow">↗</span>
-  </a>
-  <a href="https://github.com/MarStamSudo" target="_blank" class="connect-link">
-    <div>
-      <p class="connect-link-meta">Open source work</p>
-      <p class="connect-link-name">GitHub</p>
-    </div>
-    <span class="connect-link-arrow">↗</span>
-  </a>
-  <!-- Διορθωμένο email block -->
-  <a href="mailto:marinosstamatopoulos@gmail.com" class="connect-link">
-    <div>
-      <p class="connect-link-meta">Direct line</p>
-      <p class="connect-link-name">Email</p>
-    </div>
-    <span class="connect-link-arrow">↗</span>
-  </a>
-</div>
 
-<div class="footer-row reveal">
-  <p class="footer-email">marinosstamatopoulos@gmail.com</p>
-  <p class="footer-rev">REVISION 7.0 // 2026</p>
-</div>
-    
+    <div class="footer-row reveal">
+      <p class="footer-email">marinosstamatopoulos@gmail.com</p>
+      <p class="footer-rev">REVISION 7.0 // 2026</p>
+    </div>
+  </div>
+</section>
+
+<div id="toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#C8A96E;color:#06060A;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;padding:10px 20px;border-radius:100px;opacity:0;transition:opacity 0.3s,transform 0.3s;pointer-events:none;z-index:9999;">Email copied ✓</div>
+
 <script>
+  // ── COPY EMAIL ──
+  function copyEmail() {
+    navigator.clipboard.writeText('marinosstamatopoulos@gmail.com').then(() => {
+      const label = document.getElementById('email-label');
+      label.textContent = 'Copied!';
+      setTimeout(() => label.textContent = 'Email', 2000);
+      const toast = document.getElementById('toast');
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+      }, 2500);
+    });
+  }
+
   // ── CURSOR GLOW ──
   const glow = document.getElementById('glow');
   if (window.innerWidth > 768) {
