@@ -16,10 +16,8 @@
       --mono: 'JetBrains Mono', monospace;
       --sans: 'Syne', sans-serif;
     }
-
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--cream);
@@ -27,7 +25,6 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-
     /* ── NOISE TEXTURE ── */
     body::before {
       content: '';
@@ -38,7 +35,6 @@
       z-index: 999;
       opacity: 0.4;
     }
-
     /* ── CURSOR GLOW ── */
     #glow {
       position: fixed;
@@ -50,7 +46,6 @@
       transform: translate(-50%,-50%);
       transition: left 0.6s ease, top 0.6s ease;
     }
-
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -65,7 +60,6 @@
       padding: 12px 28px;
       border-radius: 100px;
     }
-
     nav a {
       font-family: var(--mono);
       font-size: 10px;
@@ -76,7 +70,6 @@
       transition: color 0.2s;
     }
     nav a:hover { color: var(--gold); }
-
     /* ── SECTIONS ── */
     section {
       min-height: 100vh;
@@ -86,20 +79,17 @@
       padding: 120px 40px;
       position: relative;
     }
-
     .wrap {
       width: 100%;
       max-width: 1100px;
       margin: 0 auto;
     }
-
     /* ── HERO ── */
     #home {
-      background: 
+      background:
         radial-gradient(ellipse 60% 50% at 70% 50%, rgba(200,169,110,0.05) 0%, transparent 60%),
         var(--bg);
     }
-
     .eyebrow {
       font-family: var(--mono);
       font-size: 11px;
@@ -110,14 +100,12 @@
       align-items: center;
       gap: 12px;
     }
-
     .eyebrow::before {
       content: '';
       width: 32px; height: 1px;
       background: var(--gold);
       display: inline-block;
     }
-
     .hero-name {
       font-family: var(--sans);
       font-weight: 800;
@@ -126,7 +114,6 @@
       letter-spacing: -0.03em;
       margin-bottom: 32px;
     }
-
     .hero-name .outline {
       color: transparent;
       -webkit-text-stroke: 1.5px var(--gold);
@@ -134,7 +121,6 @@
       display: block;
       word-break: break-word;
     }
-
     .hero-bio {
       font-size: clamp(14px, 1.5vw, 17px);
       color: var(--muted);
@@ -142,13 +128,11 @@
       max-width: 480px;
       margin-bottom: 48px;
     }
-
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
-
     .tag {
       font-family: var(--mono);
       font-size: 10px;
@@ -159,13 +143,11 @@
       color: var(--gold);
       text-transform: uppercase;
     }
-
     /* ── GLITCH ── */
     .glitch {
       position: relative;
       display: inline-block;
     }
-
     .glitch::before, .glitch::after {
       content: attr(data-text);
       position: absolute;
@@ -178,35 +160,30 @@
       line-height: inherit;
       letter-spacing: inherit;
     }
-
     .glitch::before {
       color: #ff0066;
       clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
       animation: glitch-top 4s infinite;
       -webkit-text-stroke: 0;
     }
-
     .glitch::after {
       color: #00f2ff;
       clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
       animation: glitch-bot 4s infinite;
       -webkit-text-stroke: 0;
     }
-
     @keyframes glitch-top {
       0%, 90%, 100% { transform: translate(0); opacity: 0; }
       92% { transform: translate(-3px, -2px); opacity: 0.8; }
       94% { transform: translate(3px, 2px); opacity: 0.8; }
       96% { transform: translate(-2px, 0); opacity: 0.8; }
     }
-
     @keyframes glitch-bot {
       0%, 90%, 100% { transform: translate(0); opacity: 0; }
       93% { transform: translate(3px, 1px); opacity: 0.8; }
       95% { transform: translate(-3px, -1px); opacity: 0.8; }
       97% { transform: translate(2px, 0); opacity: 0.8; }
     }
-
     /* ── SECTION LABEL ── */
     .section-label {
       font-family: var(--mono);
@@ -219,7 +196,6 @@
       align-items: center;
       gap: 16px;
     }
-
     .section-label::after {
       content: '';
       flex: 1;
@@ -227,16 +203,13 @@
       height: 1px;
       background: linear-gradient(to right, var(--gold), transparent);
     }
-
     /* ── PROJECTS ── */
     #projects { background: var(--bg); }
-
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
-
     .project-card {
       border: 1px solid rgba(200,169,110,0.1);
       border-radius: 16px;
@@ -250,7 +223,6 @@
       color: inherit;
       display: block;
     }
-
     .project-card::before {
       content: '';
       position: absolute;
@@ -259,10 +231,8 @@
       opacity: 0;
       transition: opacity 0.4s;
     }
-
     .project-card:hover { border-color: var(--gold); transform: translateY(-6px); }
     .project-card:hover::before { opacity: 1; }
-
     .project-card.featured {
       grid-column: 1 / -1;
       display: grid;
@@ -272,7 +242,6 @@
       border-color: rgba(200,169,110,0.25);
       background: rgba(200,169,110,0.04);
     }
-
     .project-status {
       font-family: var(--mono);
       font-size: 9px;
@@ -284,19 +253,17 @@
       align-items: center;
       gap: 8px;
     }
-
     .status-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--gold);
       animation: pulse 2s infinite;
     }
-
+    .status-dot.amber { background: #e0a94a; }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(0.8); }
     }
-
     .project-title {
       font-weight: 800;
       font-size: clamp(1.4rem, 3vw, 2.2rem);
@@ -304,20 +271,17 @@
       margin-bottom: 12px;
       line-height: 1.1;
     }
-
     .project-desc {
       font-size: 14px;
       color: var(--muted);
       line-height: 1.7;
       margin-bottom: 24px;
     }
-
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-
     .project-tag {
       font-family: var(--mono);
       font-size: 9px;
@@ -328,7 +292,6 @@
       color: var(--gold);
       text-transform: uppercase;
     }
-
     .project-arrow {
       font-size: 2rem;
       color: var(--gold);
@@ -336,12 +299,10 @@
       transition: opacity 0.3s, transform 0.3s;
       align-self: center;
     }
-
     .project-card:hover .project-arrow {
       opacity: 1;
       transform: translate(4px, -4px);
     }
-
     /* ── FEATURED QR ── */
     .qr-placeholder {
       width: 100px; height: 100px;
@@ -354,24 +315,20 @@
       position: relative;
       overflow: hidden;
     }
-
     .qr-grid {
       display: grid;
       grid-template-columns: repeat(5,1fr);
       gap: 3px;
       padding: 12px;
     }
-
     .qr-cell {
       aspect-ratio: 1;
       border-radius: 2px;
       background: var(--gold);
       opacity: var(--o, 0.8);
     }
-
     /* ── STACK ── */
     #stack { background: var(--bg); }
-
     .stack-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -381,16 +338,13 @@
       border-radius: 16px;
       overflow: hidden;
     }
-
     .stack-item {
       padding: 32px;
       background: var(--bg);
       transition: background 0.3s;
       position: relative;
     }
-
     .stack-item:hover { background: var(--gold-glow); }
-
     .stack-item-label {
       font-family: var(--mono);
       font-size: 9px;
@@ -399,19 +353,16 @@
       text-transform: uppercase;
       margin-bottom: 16px;
     }
-
     .stack-item-list {
       font-family: var(--mono);
       font-size: 13px;
       color: var(--muted);
       line-height: 2;
     }
-
     .stack-item-list span {
       color: var(--cream);
       font-weight: 700;
     }
-
     /* ── TERMINAL ── */
     .terminal {
       background: rgba(0,0,0,0.5);
@@ -425,7 +376,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .terminal::before {
       content: '● ● ●';
       position: absolute;
@@ -434,14 +384,11 @@
       color: rgba(200,169,110,0.3);
       letter-spacing: 6px;
     }
-
     .terminal-body { margin-top: 20px; }
-
     .t-line { display: block; }
     .t-prompt { color: var(--gold); }
     .t-out { color: var(--muted); }
     .t-val { color: #4ade80; }
-
     .cursor-blink {
       display: inline-block;
       width: 8px; height: 14px;
@@ -450,12 +397,9 @@
       vertical-align: middle;
       margin-left: 2px;
     }
-
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
     /* ── EDUCATION ── */
     #education { background: var(--bg); }
-
     .edu-card {
       border: 1px solid rgba(200,169,110,0.15);
       border-radius: 20px;
@@ -468,7 +412,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .edu-mark {
       width: 100px; height: 100px;
       border-radius: 50%;
@@ -483,7 +426,6 @@
       font-size: 1.6rem;
       color: var(--gold);
     }
-
     .edu-mark::before {
       content: '';
       position: absolute;
@@ -491,7 +433,6 @@
       border-radius: 50%;
       border: 1px solid rgba(200,169,110,0.08);
     }
-
     .edu-mark::after {
       content: '';
       position: absolute;
@@ -499,7 +440,6 @@
       border-radius: 50%;
       border: 1px solid rgba(200,169,110,0.04);
     }
-
     .edu-degree {
       font-weight: 800;
       font-size: clamp(1.4rem, 3vw, 2rem);
@@ -507,33 +447,27 @@
       line-height: 1.2;
       margin-bottom: 10px;
     }
-
     .edu-school {
       font-size: 14px;
       color: var(--muted);
       line-height: 1.7;
       margin-bottom: 18px;
     }
-
     .edu-school span {
       color: var(--cream);
       font-weight: 700;
     }
-
     .edu-meta {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
-
     @media (max-width: 768px) {
       .edu-card { grid-template-columns: 1fr; text-align: left; }
       .edu-mark { margin-bottom: 4px; }
     }
-
     /* ── IOT ── */
     #iot { background: var(--bg); }
-
     .iot-card {
       border: 1px solid rgba(200,169,110,0.15);
       border-radius: 20px;
@@ -544,13 +478,11 @@
       gap: 48px;
       align-items: center;
     }
-
     .iot-readings {
       display: flex;
       gap: 48px;
       margin-top: 32px;
     }
-
     .iot-val {
       font-family: var(--mono);
       font-size: clamp(2.5rem, 5vw, 4rem);
@@ -559,7 +491,6 @@
       line-height: 1;
       transition: opacity 0.3s;
     }
-
     .iot-key {
       font-family: var(--mono);
       font-size: 10px;
@@ -568,7 +499,6 @@
       text-transform: uppercase;
       margin-bottom: 8px;
     }
-
     .iot-visual {
       width: 120px; height: 120px;
       border-radius: 50%;
@@ -578,7 +508,6 @@
       justify-content: center;
       position: relative;
     }
-
     .iot-visual::before {
       content: '';
       position: absolute;
@@ -586,7 +515,6 @@
       border-radius: 50%;
       border: 1px solid rgba(200,169,110,0.08);
     }
-
     .iot-visual::after {
       content: '';
       position: absolute;
@@ -594,26 +522,21 @@
       border-radius: 50%;
       border: 1px solid rgba(200,169,110,0.04);
     }
-
     .iot-icon {
       font-size: 2.5rem;
       animation: float 4s ease-in-out infinite;
     }
-
     @keyframes float {
       0%,100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
-
     /* ── CONNECT ── */
     #connect {
       background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200,169,110,0.05) 0%, transparent 60%);
     }
-
     .connect-links {
       margin: 56px 0;
     }
-
     .connect-link {
       display: flex;
       align-items: center;
@@ -626,7 +549,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .connect-link::before {
       content: '';
       position: absolute;
@@ -636,24 +558,20 @@
       transition: width 0.4s;
       border-radius: 4px;
     }
-
     .connect-link:hover { padding-left: 20px; }
     .connect-link:hover::before { width: 4px; }
-
     .connect-link-name {
       font-weight: 800;
       font-size: clamp(1.8rem, 5vw, 3.5rem);
       letter-spacing: -0.02em;
       line-height: 1;
     }
-
     .connect-link-meta {
       font-family: var(--mono);
       font-size: 11px;
       color: var(--gold);
       letter-spacing: 0.1em;
     }
-
     .connect-link-arrow {
       font-size: 1.5rem;
       color: var(--gold);
@@ -661,12 +579,10 @@
       transform: translate(-10px, 10px);
       transition: opacity 0.3s, transform 0.3s;
     }
-
     .connect-link:hover .connect-link-arrow {
       opacity: 1;
       transform: translate(0, 0);
     }
-
     .footer-row {
       display: flex;
       justify-content: space-between;
@@ -675,7 +591,6 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .footer-email {
       font-family: var(--mono);
       font-size: 12px;
@@ -684,14 +599,12 @@
       transition: color 0.2s;
     }
     .footer-email:hover { color: var(--gold); }
-
     .footer-rev {
       font-family: var(--mono);
       font-size: 10px;
       color: rgba(200,169,110,0.2);
       letter-spacing: 0.1em;
     }
-
     /* ── REVEAL ── */
     .reveal {
       opacity: 0;
@@ -701,7 +614,6 @@
     .reveal.active { opacity: 1; transform: translateY(0); }
     .reveal-delay { transition-delay: 0.15s; }
     .reveal-delay-2 { transition-delay: 0.3s; }
-
     /* ── PROGRESS BARS ── */
     .skill-row {
       display: flex;
@@ -709,7 +621,6 @@
       gap: 16px;
       margin-bottom: 14px;
     }
-
     .skill-name {
       font-family: var(--mono);
       font-size: 11px;
@@ -717,7 +628,6 @@
       width: 100px;
       flex-shrink: 0;
     }
-
     .skill-bar {
       flex: 1;
       height: 2px;
@@ -725,7 +635,6 @@
       border-radius: 2px;
       overflow: hidden;
     }
-
     .skill-fill {
       height: 100%;
       background: var(--gold);
@@ -733,7 +642,6 @@
       width: 0;
       transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
     }
-
     .skill-pct {
       font-family: var(--mono);
       font-size: 10px;
@@ -741,7 +649,6 @@
       width: 32px;
       text-align: right;
     }
-
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       section { padding: 100px 20px 60px; }
@@ -756,16 +663,13 @@
       #glow { display: none; }
       .connect-link-name { font-size: 2rem; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-
 <div id="glow"></div>
-
 <nav>
   <a href="#home">Home</a>
   <a href="#projects">Projects</a>
@@ -774,7 +678,6 @@
   <a href="#iot">IoT</a>
   <a href="#connect">Connect</a>
 </nav>
-
 <!-- ── HERO ── -->
 <section id="home">
   <div class="wrap">
@@ -797,14 +700,11 @@
     </div>
   </div>
 </section>
-
 <!-- ── PROJECTS ── -->
 <section id="projects">
   <div class="wrap">
     <p class="section-label reveal">Selected work</p>
-
     <div class="projects-grid">
-
       <!-- Featured: ARspace -->
       <a href="https://arspace-viewer.vercel.app/" target="_blank" class="project-card featured reveal">
         <div>
@@ -830,7 +730,6 @@
           <span class="project-arrow">↗</span>
         </div>
       </a>
-
       <!-- IoT Weather Station -->
       <a href="#iot" class="project-card reveal reveal-delay">
         <div class="project-status">
@@ -848,24 +747,29 @@
         </div>
         <span class="project-arrow" style="display:block;margin-top:24px;">↗</span>
       </a>
-
-      <!-- Placeholder: next project -->
-      <div class="project-card reveal reveal-delay-2" style="display:flex;align-items:center;justify-content:center;min-height:200px;cursor:default;">
-        <div style="text-align:center;">
-          <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:rgba(200,169,110,0.3);text-transform:uppercase;">Next project</p>
-          <p style="font-family:var(--mono);font-size:10px;color:rgba(200,169,110,0.15);margin-top:8px;">building...</p>
+      <!-- YourLightAR (Shopify app) -->
+      <div class="project-card reveal reveal-delay-2" style="cursor:default;">
+        <div class="project-status">
+          <div class="status-dot amber"></div>
+          Submitted · pending Shopify review
+        </div>
+        <h3 class="project-title">YourLightAR</h3>
+        <p class="project-desc">
+          Shopify app bringing lightweight 3D &amp; AR product previews to e-commerce stores. Merchants attach a 3D model to a product; shoppers tap to view it in their own space — no app download needed.
+        </p>
+        <div class="project-tags" style="margin-top:20px;">
+          <span class="project-tag">Shopify</span>
+          <span class="project-tag">WebAR</span>
+          <span class="project-tag">Supabase</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
 <!-- ── STACK ── -->
 <section id="stack">
   <div class="wrap">
     <p class="section-label reveal">Tech stack</p>
-
     <div class="stack-grid reveal">
       <div class="stack-item">
         <p class="stack-item-label">Languages</p>
@@ -916,7 +820,6 @@
         </div>
       </div>
     </div>
-
     <div class="terminal reveal" style="margin-top:28px;">
       <div class="terminal-body">
         <span class="t-line"><span class="t-prompt">~/arspace $</span> <span class="t-out">node --version</span></span>
@@ -930,12 +833,10 @@
     </div>
   </div>
 </section>
-
 <!-- ── EDUCATION ── -->
 <section id="education">
   <div class="wrap">
     <p class="section-label reveal">Education</p>
-
     <div class="edu-card reveal">
       <div class="edu-mark">BSc</div>
       <div>
@@ -949,18 +850,15 @@
     </div>
   </div>
 </section>
-
 <!-- ── IOT ── -->
 <section id="iot">
   <div class="wrap">
     <p class="section-label reveal">Live telemetry</p>
-
     <div class="iot-card reveal">
       <div>
         <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">ESP32 · Sensor Node · Lakonia, GR</p>
         <h2 style="font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-0.02em;margin-bottom:12px;">IoT Weather Station</h2>
         <p style="font-size:14px;color:var(--muted);line-height:1.7;max-width:480px;">Real-time environmental monitoring via a distributed network of sensors. Data streams every 4 seconds.</p>
-
         <div class="iot-readings">
           <div>
             <p class="iot-key">Temperature</p>
@@ -978,7 +876,6 @@
     </div>
   </div>
 </section>
-
 <!-- ── CONNECT ── -->
 <section id="connect">
   <div class="wrap">
@@ -987,7 +884,6 @@
       Always curious.<br>
       <span style="color:var(--gold);">Sometimes useful.</span>
     </h2>
-
     <div class="connect-links reveal">
       <a href="https://www.linkedin.com/in/marinosstamatopoulos/" target="_blank" class="connect-link">
         <div>
@@ -1011,16 +907,13 @@
         <span class="connect-link-arrow">↗</span>
       </div>
     </div>
-
     <div class="footer-row reveal">
       <p class="footer-email">marinosstamatopoulos@gmail.com</p>
       <p class="footer-rev">REVISION 7.0 // 2026</p>
     </div>
   </div>
 </section>
-
 <div id="toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#C8A96E;color:#06060A;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;padding:10px 20px;border-radius:100px;opacity:0;transition:opacity 0.3s,transform 0.3s;pointer-events:none;z-index:9999;">Email copied ✓</div>
-
 <script>
   // ── COPY EMAIL ──
   function copyEmail() {
@@ -1037,7 +930,6 @@
       }, 2500);
     });
   }
-
   // ── CURSOR GLOW ──
   const glow = document.getElementById('glow');
   if (window.innerWidth > 768) {
@@ -1046,7 +938,6 @@
       glow.style.top  = e.clientY + 'px';
     });
   }
-
   // ── CARD SPOTLIGHT ──
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', e => {
@@ -1057,13 +948,11 @@
       card.style.setProperty('--my', y + '%');
     });
   });
-
   // ── SCROLL REVEAL ──
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
   // ── SKILL BARS ──
   const skillObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -1075,7 +964,6 @@
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.skill-row') .forEach(el => skillObs.observe(el.parentElement));
-
   // ── IOT DATA ──
   function updateIoT() {
     const temp = (18 + Math.random() * 10).toFixed(1);
@@ -1091,7 +979,6 @@
   }
   setInterval(updateIoT, 4000);
   updateIoT();
-
   // ── QR ANIMATION ──
   const qrGrid = document.getElementById('qr-anim');
   if (qrGrid) {
@@ -1110,7 +997,6 @@
       });
     }, 800);
   }
-
   // ── KONAMI CODE EASTER EGG ──
   const konami = [38,38,40,40,37,39,37,39,66,65];
   let ki = 0;
