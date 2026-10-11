@@ -1,2 +1,3 @@
 # MarStamSudo.github.io
-# My first ever website
+# My personal website, nothing serious.
+
