@@ -3,1029 +3,378 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marinos Stamatopoulos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <title>Marinos Stamatopoulos — Founder of STAMX Tech</title>
+  <meta name="description" content="Marinos Stamatopoulos is the founder of STAMX Tech and an Informatics and Telecommunications student at the University of the Peloponnese. He builds IoT hardware and web software.">
+  <meta name="author" content="Marinos Stamatopoulos">
+  <meta name="theme-color" content="#0d0d0c">
+  <link rel="canonical" href="https://marstamsudo.github.io/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Marinos Stamatopoulos">
+  <meta property="og:title" content="Marinos Stamatopoulos — Founder of STAMX Tech">
+  <meta property="og:description" content="Founder of STAMX Tech and Informatics and Telecommunications student at the University of the Peloponnese. IoT hardware and web software.">
+  <meta property="og:url" content="https://marstamsudo.github.io/">
+  <meta property="profile:first_name" content="Marinos">
+  <meta property="profile:last_name" content="Stamatopoulos">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Identity links: these tell search engines the profiles below are the same person. -->
+  <link rel="me" href="https://www.linkedin.com/in/marinosstamatopoulos/">
+  <link rel="me" href="https://github.com/MarStamSudo">
+  <link rel="me" href="https://www.stamx.tech/about">
+
+  <!-- Structured data. The Person @id is the same one used on stamx.tech, so both sites describe one entity. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": "https://marstamsudo.github.io/#profilepage",
+    "url": "https://marstamsudo.github.io/",
+    "name": "Marinos Stamatopoulos",
+    "inLanguage": "en",
+    "mainEntity": {
+      "@type": "Person",
+      "@id": "https://www.stamx.tech/about#marinos-stamatopoulos",
+      "name": "Marinos Stamatopoulos",
+      "alternateName": "Μαρίνος Σταματόπουλος",
+      "givenName": "Marinos",
+      "familyName": "Stamatopoulos",
+      "jobTitle": "Founder",
+      "url": "https://marstamsudo.github.io/",
+      "email": "mailto:marstamsolutions@gmail.com",
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://www.stamx.tech/#organization",
+        "name": "STAMX Tech",
+        "url": "https://www.stamx.tech/"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of the Peloponnese",
+        "alternateName": "Πανεπιστήμιο Πελοποννήσου",
+        "url": "https://www.uop.gr/"
+      },
+      "knowsAbout": ["Internet of Things", "Embedded systems", "Web development", "Augmented reality"],
+      "sameAs": [
+        "https://www.linkedin.com/in/marinosstamatopoulos/",
+        "https://github.com/MarStamSudo",
+        "https://www.stamx.tech/about"
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #06060A;
-      --gold: #C8A96E;
-      --gold-dim: rgba(200,169,110,0.12);
-      --gold-glow: rgba(200,169,110,0.06);
-      --cream: #F0EBE0;
-      --muted: rgba(240,235,224,0.35);
-      --mono: 'JetBrains Mono', monospace;
-      --sans: 'Syne', sans-serif;
+      --bg: #0d0d0c;
+      --panel: #141412;
+      --line: #272622;
+      --fg: #ecebe6;
+      --muted: #a29f96;
+      --accent: #c8a96e;
+      --sans: "IBM Plex Sans", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior: smooth; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { color-scheme: dark; background: var(--bg); scroll-padding-top: 5rem; }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
     body {
       background: var(--bg);
-      color: var(--cream);
+      color: var(--fg);
       font-family: var(--sans);
-      overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    /* ── NOISE TEXTURE ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 999;
-      opacity: 0.4;
-    }
-    /* ── CURSOR GLOW ── */
-    #glow {
-      position: fixed;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 1;
-      transform: translate(-50%,-50%);
-      transition: left 0.6s ease, top 0.6s ease;
-    }
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 24px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      display: flex;
-      gap: 32px;
-      background: rgba(6,6,10,0.7);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(200,169,110,0.12);
-      padding: 12px 28px;
-      border-radius: 100px;
-    }
-    nav a {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--gold); }
-    /* ── SECTIONS ── */
-    section {
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 120px 40px;
-      position: relative;
-    }
-    .wrap {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    /* ── HERO ── */
-    #home {
-      background:
-        radial-gradient(ellipse 60% 50% at 70% 50%, rgba(200,169,110,0.05) 0%, transparent 60%),
-        var(--bg);
-    }
-    .eyebrow {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .eyebrow::before {
-      content: '';
-      width: 32px; height: 1px;
-      background: var(--gold);
-      display: inline-block;
-    }
-    .hero-name {
-      font-family: var(--sans);
-      font-weight: 800;
-      font-size: clamp(3rem, 9vw, 7.5rem);
-      line-height: 0.92;
-      letter-spacing: -0.03em;
-      margin-bottom: 32px;
-    }
-    .hero-name .outline {
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--gold);
-      font-size: clamp(1.6rem, 6.2vw, 7.5rem);
-      display: block;
-      word-break: break-word;
-    }
-    .hero-bio {
-      font-size: clamp(14px, 1.5vw, 17px);
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 480px;
-      margin-bottom: 48px;
-    }
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .tag {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      padding: 6px 14px;
-      border: 1px solid rgba(200,169,110,0.25);
-      border-radius: 100px;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-    /* ── GLITCH ── */
-    .glitch {
-      position: relative;
-      display: inline-block;
-    }
-    .glitch::before, .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      font-family: inherit;
-      font-weight: inherit;
-      font-size: inherit;
-      line-height: inherit;
-      letter-spacing: inherit;
-    }
-    .glitch::before {
-      color: #ff0066;
-      clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
-      animation: glitch-top 4s infinite;
-      -webkit-text-stroke: 0;
-    }
-    .glitch::after {
-      color: #00f2ff;
-      clip-path: polygon(0 60%, 100% 60%, 100% 80%, 0 80%);
-      animation: glitch-bot 4s infinite;
-      -webkit-text-stroke: 0;
-    }
-    @keyframes glitch-top {
-      0%, 90%, 100% { transform: translate(0); opacity: 0; }
-      92% { transform: translate(-3px, -2px); opacity: 0.8; }
-      94% { transform: translate(3px, 2px); opacity: 0.8; }
-      96% { transform: translate(-2px, 0); opacity: 0.8; }
-    }
-    @keyframes glitch-bot {
-      0%, 90%, 100% { transform: translate(0); opacity: 0; }
-      93% { transform: translate(3px, 1px); opacity: 0.8; }
-      95% { transform: translate(-3px, -1px); opacity: 0.8; }
-      97% { transform: translate(2px, 0); opacity: 0.8; }
-    }
-    /* ── SECTION LABEL ── */
-    .section-label {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 56px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .section-label::after {
-      content: '';
-      flex: 1;
-      max-width: 80px;
-      height: 1px;
-      background: linear-gradient(to right, var(--gold), transparent);
-    }
-    /* ── PROJECTS ── */
-    #projects { background: var(--bg); }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .project-card {
-      border: 1px solid rgba(200,169,110,0.1);
-      border-radius: 16px;
-      padding: 36px;
-      background: rgba(200,169,110,0.02);
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.4s, transform 0.4s, background 0.4s;
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(200,169,110,0.08) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
-    .project-card:hover { border-color: var(--gold); transform: translateY(-6px); }
-    .project-card:hover::before { opacity: 1; }
-    .project-card.featured {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 40px;
-      align-items: center;
-      border-color: rgba(200,169,110,0.25);
-      background: rgba(200,169,110,0.04);
-    }
-    .project-status {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.16em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .status-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 2s infinite;
-    }
-    .status-dot.amber { background: #e0a94a; }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
-    }
-    .project-title {
-      font-weight: 800;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-      line-height: 1.1;
-    }
-    .project-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .project-tag {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      padding: 4px 10px;
-      background: var(--gold-dim);
-      border-radius: 100px;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-    .project-arrow {
-      font-size: 2rem;
-      color: var(--gold);
-      opacity: 0.3;
-      transition: opacity 0.3s, transform 0.3s;
-      align-self: center;
-    }
-    .project-card:hover .project-arrow {
-      opacity: 1;
-      transform: translate(4px, -4px);
-    }
-    /* ── FEATURED QR ── */
-    .qr-placeholder {
-      width: 100px; height: 100px;
-      border: 1px solid rgba(200,169,110,0.3);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .qr-grid {
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      gap: 3px;
-      padding: 12px;
-    }
-    .qr-cell {
-      aspect-ratio: 1;
-      border-radius: 2px;
-      background: var(--gold);
-      opacity: var(--o, 0.8);
-    }
-    /* ── STACK ── */
-    #stack { background: var(--bg); }
-    .stack-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(200,169,110,0.08);
-      border: 1px solid rgba(200,169,110,0.08);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .stack-item {
-      padding: 32px;
-      background: var(--bg);
-      transition: background 0.3s;
-      position: relative;
-    }
-    .stack-item:hover { background: var(--gold-glow); }
-    .stack-item-label {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .stack-item-list {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 2;
-    }
-    .stack-item-list span {
-      color: var(--cream);
-      font-weight: 700;
-    }
-    /* ── TERMINAL ── */
-    .terminal {
-      background: rgba(0,0,0,0.5);
-      border: 1px solid rgba(200,169,110,0.15);
-      border-radius: 12px;
-      padding: 24px;
-      font-family: var(--mono);
-      font-size: 12px;
-      line-height: 1.8;
-      margin-top: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .terminal::before {
-      content: '● ● ●';
-      position: absolute;
-      top: 12px; left: 16px;
-      font-size: 10px;
-      color: rgba(200,169,110,0.3);
-      letter-spacing: 6px;
-    }
-    .terminal-body { margin-top: 20px; }
-    .t-line { display: block; }
-    .t-prompt { color: var(--gold); }
-    .t-out { color: var(--muted); }
-    .t-val { color: #4ade80; }
-    .cursor-blink {
-      display: inline-block;
-      width: 8px; height: 14px;
-      background: var(--gold);
-      animation: blink 1s infinite;
-      vertical-align: middle;
-      margin-left: 2px;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-    /* ── EDUCATION ── */
-    #education { background: var(--bg); }
-    .edu-card {
-      border: 1px solid rgba(200,169,110,0.15);
-      border-radius: 20px;
-      padding: 48px;
-      background: linear-gradient(135deg, rgba(200,169,110,0.04) 0%, transparent 60%);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 40px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .edu-mark {
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      position: relative;
-      font-family: var(--mono);
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: var(--gold);
-    }
-    .edu-mark::before {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.08);
-    }
-    .edu-mark::after {
-      content: '';
-      position: absolute;
-      inset: -16px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.04);
-    }
-    .edu-degree {
-      font-weight: 800;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-    .edu-school {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 18px;
-    }
-    .edu-school span {
-      color: var(--cream);
-      font-weight: 700;
-    }
-    .edu-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    @media (max-width: 768px) {
-      .edu-card { grid-template-columns: 1fr; text-align: left; }
-      .edu-mark { margin-bottom: 4px; }
-    }
-    /* ── IOT ── */
-    #iot { background: var(--bg); }
-    .iot-card {
-      border: 1px solid rgba(200,169,110,0.15);
-      border-radius: 20px;
-      padding: 48px;
-      background: linear-gradient(135deg, rgba(200,169,110,0.04) 0%, transparent 60%);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: center;
-    }
-    .iot-readings {
-      display: flex;
-      gap: 48px;
-      margin-top: 32px;
-    }
-    .iot-val {
-      font-family: var(--mono);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      transition: opacity 0.3s;
-    }
-    .iot-key {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .iot-visual {
-      width: 120px; height: 120px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .iot-visual::before {
-      content: '';
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.08);
-    }
-    .iot-visual::after {
-      content: '';
-      position: absolute;
-      inset: -16px;
-      border-radius: 50%;
-      border: 1px solid rgba(200,169,110,0.04);
-    }
-    .iot-icon {
-      font-size: 2.5rem;
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    /* ── CONNECT ── */
-    #connect {
-      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200,169,110,0.05) 0%, transparent 60%);
-    }
-    .connect-links {
-      margin: 56px 0;
-    }
-    .connect-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 28px 0;
-      border-bottom: 1px solid rgba(200,169,110,0.08);
-      text-decoration: none;
-      color: var(--cream);
-      transition: padding-left 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-    .connect-link::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 0;
-      background: var(--gold-dim);
-      transition: width 0.4s;
-      border-radius: 4px;
-    }
-    .connect-link:hover { padding-left: 20px; }
-    .connect-link:hover::before { width: 4px; }
-    .connect-link-name {
-      font-weight: 800;
-      font-size: clamp(1.8rem, 5vw, 3.5rem);
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-    .connect-link-meta {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-    }
-    .connect-link-arrow {
-      font-size: 1.5rem;
-      color: var(--gold);
-      opacity: 0;
-      transform: translate(-10px, 10px);
-      transition: opacity 0.3s, transform 0.3s;
-    }
-    .connect-link:hover .connect-link-arrow {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 60px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-email {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-email:hover { color: var(--gold); }
-    .footer-rev {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: rgba(200,169,110,0.2);
-      letter-spacing: 0.1em;
-    }
-    /* ── REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-    }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-    .reveal-delay { transition-delay: 0.15s; }
-    .reveal-delay-2 { transition-delay: 0.3s; }
-    /* ── PROGRESS BARS ── */
-    .skill-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-    .skill-name {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--muted);
-      width: 100px;
-      flex-shrink: 0;
-    }
-    .skill-bar {
-      flex: 1;
-      height: 2px;
-      background: rgba(200,169,110,0.1);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    .skill-fill {
-      height: 100%;
-      background: var(--gold);
-      border-radius: 2px;
-      width: 0;
-      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
-    }
-    .skill-pct {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--gold);
-      width: 32px;
-      text-align: right;
-    }
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      section { padding: 100px 20px 60px; }
-      nav { width: calc(100% - 32px); justify-content: center; gap: 16px; padding: 10px 16px; flex-wrap: wrap; }
-      nav a { font-size: 9px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-template-columns: 1fr; }
-      .qr-placeholder { display: none; }
-      .stack-grid { grid-template-columns: 1fr; }
-      .iot-card { grid-template-columns: 1fr; gap: 32px; }
-      .iot-visual { display: none; }
-      #glow { display: none; }
-      .connect-link-name { font-size: 2rem; }
-    }
+
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    .wrap { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 640px) { .wrap { padding: 0 32px; } }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(13, 13, 12, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .wrap {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 8px 24px; padding-top: 16px; padding-bottom: 16px;
+    }
+    .brand { font-weight: 600; font-size: 17px; text-decoration: none; letter-spacing: 0.01em; }
+    .site-nav { display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 14px; }
+    .site-nav a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .site-nav a:hover { color: var(--fg); }
+
+    /* Hero */
+    .hero { padding: 88px 0 80px; }
+    @media (min-width: 640px) { .hero { padding: 128px 0 112px; } }
+    .hero h1 {
+      font-weight: 500;
+      font-size: clamp(2.5rem, 7.2vw, 4.75rem);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+    }
+    .hero .name-el { margin-top: 14px; color: var(--muted); font-size: 17px; }
+    .hero .role { margin-top: 30px; max-width: 40rem; font-size: clamp(1.15rem, 2.1vw, 1.4rem); line-height: 1.45; }
+    .hero .bio { margin-top: 18px; max-width: 38rem; color: var(--muted); font-size: 17px; line-height: 1.7; }
+    .actions { margin-top: 38px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 24px; border-radius: 6px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .button.primary { background: var(--fg); color: var(--bg); }
+    .button.primary:hover { background: #fff; }
+    .button.secondary { border: 1px solid var(--line); font-weight: 500; }
+    .button.secondary:hover { border-color: var(--muted); }
+
+    .text-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(200, 169, 110, 0.4);
+      text-underline-offset: 4px;
+    }
+    .text-link:hover { text-decoration-color: var(--accent); }
+
+    /* Sections: heading on the left, content on the right */
+    .row { border-top: 1px solid var(--line); padding: 64px 0; display: grid; gap: 20px 40px; }
+    @media (min-width: 800px) { .row { grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); padding: 80px 0; } }
+    .row > h2 { font-weight: 500; font-size: 1.6rem; letter-spacing: -0.015em; line-height: 1.2; }
+    .band { background: var(--panel); border-top: 1px solid var(--line); }
+    .band .row { border-top: 0; }
+    .band + section .row { border-top: 0; }
+
+    /* Company */
+    .company-name { font-size: 1.5rem; font-weight: 500; }
+    .company-role { color: var(--muted); margin-top: 2px; }
+    .company-desc { margin-top: 18px; max-width: 38rem; line-height: 1.7; color: rgba(236, 235, 230, 0.9); }
+    .company-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+
+    /* Projects: each one is a single link */
+    .projects { list-style: none; border-top: 1px solid var(--line); }
+    .projects li { border-bottom: 1px solid var(--line); }
+    .project {
+      display: block; padding: 26px 0; text-decoration: none;
+      transition: padding-left 0.2s, background 0.2s;
+    }
+    .project:hover { padding-left: 14px; background: rgba(200, 169, 110, 0.04); }
+    .project-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 20px; }
+    .project-title { font-size: 1.2rem; font-weight: 500; }
+    .project:hover .project-title { color: var(--accent); }
+    .project-status { font-size: 14px; color: var(--muted); }
+    .project-desc { margin-top: 8px; max-width: 38rem; color: var(--muted); line-height: 1.7; }
+    .project-meta { margin-top: 10px; font-size: 14px; color: var(--muted); }
+    .project-where { margin-top: 10px; font-size: 14px; color: var(--accent); }
+
+    /* Skills */
+    .skills { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .skills div { display: grid; gap: 2px 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    @media (min-width: 560px) { .skills div { grid-template-columns: 150px 1fr; } }
+    .skills dt { color: var(--muted); font-size: 15px; }
+    .skills dd { font-size: 15px; }
+
+    /* Education */
+    .edu-degree { font-size: 1.2rem; font-weight: 500; }
+    .edu-lines { margin-top: 8px; color: var(--muted); line-height: 1.7; }
+
+    /* Contact */
+    .contact-email { font-size: clamp(1.15rem, 3.4vw, 1.6rem); font-weight: 500; overflow-wrap: anywhere; }
+    .contact-links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--line); padding: 32px 0 44px; font-size: 14px; color: var(--muted); }
+    .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+    .site-footer a { color: var(--fg); }
+
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 <body>
-<div id="glow"></div>
-<nav>
-  <a href="#home">Home</a>
-  <a href="#projects">Projects</a>
-  <a href="#stack">Stack</a>
-  <a href="#education">Education</a>
-  <a href="#iot">IoT</a>
-  <a href="#connect">Connect</a>
-</nav>
-<!-- ── HERO ── -->
-<section id="home">
+
+<header class="site-header">
   <div class="wrap">
-    <div class="reveal">
-      <p class="eyebrow">CS Student · Builder · Founder</p>
-      <h1 class="hero-name">
-        <span class="glitch" data-text="MARINOS">MARINOS</span><br>
-        <span class="outline">STAMATOPOULOS</span>
-      </h1>
-      <p class="hero-bio">
-        First-year Computer Science student building WebAR infrastructure for the physical world. Founder of ARspace — making augmented reality creation as simple as uploading a file.
+    <a class="brand" href="#top">Marinos Stamatopoulos</a>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#company">Company</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Intro -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Marinos Stamatopoulos</h1>
+      <p class="name-el" lang="el">Μαρίνος Σταματόπουλος</p>
+      <p class="role">
+        Founder of <a class="text-link" href="https://www.stamx.tech/" rel="me">STAMX Tech</a>.
+        Informatics and Telecommunications student at the University of the Peloponnese.
       </p>
-      <div class="hero-tags">
-        <span class="tag">WebAR</span>
-        <span class="tag">Full-stack</span>
-        <span class="tag">IoT</span>
-        <span class="tag">Supabase</span>
-        <span class="tag">Three.js</span>
+      <p class="bio">
+        I build connected hardware and the web software around it: weather stations for agriculture,
+        IoT devices and 3D/AR applications for the web. I am in the second year of my degree, in Tripoli, Greece.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://www.stamx.tech/">Visit STAMX Tech</a>
+        <a class="button secondary" href="#contact">Contact</a>
       </div>
     </div>
-  </div>
-</section>
-<!-- ── PROJECTS ── -->
-<section id="projects">
-  <div class="wrap">
-    <p class="section-label reveal">Selected work</p>
-    <div class="projects-grid">
-      <!-- Featured: ARspace -->
-      <a href="https://arspace-viewer.vercel.app/" target="_blank" class="project-card featured reveal">
+  </section>
+
+  <!-- Company -->
+  <section id="company" class="band">
+    <div class="wrap">
+      <div class="row">
+        <h2>Company</h2>
         <div>
-          <div class="project-status">
-            <div class="status-dot"></div>
-            Live · actively building
-          </div>
-          <h3 class="project-title">ARspace</h3>
-          <p class="project-desc">
-            No-code WebAR platform for museums. Curators upload 3D assets and publish AR experiences in 10 minutes — visitors scan a QR and see exhibits in their space. No app download. No developer needed.
+          <p class="company-name">STAMX Tech</p>
+          <p class="company-role">Founder</p>
+          <p class="company-desc">
+            STAMX Tech is the technology company I founded. It develops weather monitoring stations,
+            IoT hardware, web applications and AI automation, and it publishes the YourLightAR app for Shopify.
           </p>
-          <div class="project-tags">
-            <span class="project-tag">WebXR</span>
-            <span class="project-tag">model-viewer</span>
-            <span class="project-tag">Supabase</span>
-            <span class="project-tag">Vercel</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
-          <div class="qr-placeholder">
-            <div class="qr-grid" id="qr-anim"></div>
-          </div>
-          <span class="project-arrow">↗</span>
-        </div>
-      </a>
-      <!-- IoT Weather Station -->
-      <a href="#iot" class="project-card reveal reveal-delay">
-        <div class="project-status">
-          <div class="status-dot"></div>
-          Live sensor data
-        </div>
-        <h3 class="project-title">IoT Weather Node</h3>
-        <p class="project-desc">
-          Real-time environmental monitoring via distributed sensor network. ESP32-based nodes streaming temperature and humidity data.
-        </p>
-        <div class="project-tags" style="margin-top:20px;">
-          <span class="project-tag">ESP32</span>
-          <span class="project-tag">C++</span>
-          <span class="project-tag">MQTT</span>
-        </div>
-        <span class="project-arrow" style="display:block;margin-top:24px;">↗</span>
-      </a>
-      <!-- YourLightAR (Shopify app) -->
-      <div class="project-card reveal reveal-delay-2" style="cursor:default;">
-        <div class="project-status">
-          <div class="status-dot amber"></div>
-          Submitted · pending Shopify review
-        </div>
-        <h3 class="project-title">YourLightAR</h3>
-        <p class="project-desc">
-          Shopify app bringing lightweight 3D &amp; AR product previews to e-commerce stores. Merchants attach a 3D model to a product; shoppers tap to view it in their own space — no app download needed.
-        </p>
-        <div class="project-tags" style="margin-top:20px;">
-          <span class="project-tag">Shopify</span>
-          <span class="project-tag">WebAR</span>
-          <span class="project-tag">Supabase</span>
+          <p class="company-links">
+            <a class="text-link" href="https://www.stamx.tech/">stamx.tech</a>
+            <a class="text-link" href="https://www.stamx.tech/about" rel="me">About the company and its founder</a>
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- ── STACK ── -->
-<section id="stack">
-  <div class="wrap">
-    <p class="section-label reveal">Tech stack</p>
-    <div class="stack-grid reveal">
-      <div class="stack-item">
-        <p class="stack-item-label">Languages</p>
-        <div class="stack-item-list">
-          <span>JavaScript</span> / HTML / CSS<br>
-          <span>Python</span><br>
-          C++ / Java
-        </div>
-      </div>
-      <div class="stack-item">
-        <p class="stack-item-label">Frontend</p>
-        <div class="stack-item-list">
-          <span>React</span> / Three.js<br>
-          <span>model-viewer</span><br>
-          WebXR / WebGL
-        </div>
-      </div>
-      <div class="stack-item">
-        <p class="stack-item-label">Backend</p>
-        <div class="stack-item-list">
-          <span>Supabase</span> (DB + Storage)<br>
-          <span>Node.js</span><br>
-          REST APIs
-        </div>
-      </div>
-      <div class="stack-item">
-        <p class="stack-item-label">Infrastructure</p>
-        <div class="stack-item-list">
-          <span>Vercel</span> (deploy)<br>
-          <span>Git</span> / GitHub<br>
-          Linux
-        </div>
-      </div>
-      <div class="stack-item">
-        <p class="stack-item-label">Hardware</p>
-        <div class="stack-item-list">
-          <span>ESP32</span> / Arduino<br>
-          Sensor networks<br>
-          MQTT / Serial
-        </div>
-      </div>
-      <div class="stack-item">
-        <p class="stack-item-label">Currently learning</p>
-        <div class="stack-item-list">
-          <span>WebGPU</span><br>
-          Cloud Anchors<br>
-          MindAR.js
-        </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work">
+    <div class="wrap">
+      <div class="row">
+        <h2>Work</h2>
+        <ul class="projects">
+          <li>
+            <a class="project" href="https://apps.shopify.com/yourlightar" target="_blank" rel="noopener">
+              <div class="project-head">
+                <h3 class="project-title">YourLightAR</h3>
+                <span class="project-status">Live on the Shopify App Store</span>
+              </div>
+              <p class="project-desc">
+                A Shopify app that uses AI to turn product photos into 3D models. Shoppers view them in
+                augmented reality, true to scale, without installing anything. Published by STAMX Tech.
+              </p>
+              <p class="project-meta">Shopify, WebAR, Supabase</p>
+              <p class="project-where">View on the Shopify App Store</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://github.com/MarStamSudo/Smart_AgroTech_ESP32" target="_blank" rel="noopener">
+              <div class="project-head">
+                <h3 class="project-title">Agricultural weather station</h3>
+                <span class="project-status">STAMX Tech</span>
+              </div>
+              <p class="project-desc">
+                An ESP32-based weather station for precision agriculture. It uses two sensors (BME388 and SHT40)
+                for redundancy and sends its readings over HTTP in real time.
+              </p>
+              <p class="project-meta">ESP32, C++, sensor integration</p>
+              <p class="project-where">View the code on GitHub</p>
+            </a>
+          </li>
+          <li>
+            <a class="project" href="https://arspace-viewer.vercel.app/" target="_blank" rel="noopener">
+              <div class="project-head">
+                <h3 class="project-title">ARspace</h3>
+                <span class="project-status">Completed</span>
+              </div>
+              <p class="project-desc">
+                A no-code WebAR platform for museums. Curators upload 3D assets and publish AR experiences;
+                visitors scan a QR code and see the exhibits in their own space, with no app to download.
+              </p>
+              <p class="project-meta">WebXR, model-viewer, Supabase, Vercel</p>
+              <p class="project-where">Open ARspace</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="terminal reveal" style="margin-top:28px;">
-      <div class="terminal-body">
-        <span class="t-line"><span class="t-prompt">~/arspace $</span> <span class="t-out">node --version</span></span>
-        <span class="t-line"><span class="t-val">v20.11.0</span></span>
-        <span class="t-line"><span class="t-prompt">~/arspace $</span> <span class="t-out">git log --oneline -3</span></span>
-        <span class="t-line"><span class="t-val">a3f2c1e</span> <span class="t-out">feat: 3D preview before publish</span></span>
-        <span class="t-line"><span class="t-val">b7d9e4a</span> <span class="t-out">feat: AR onboarding screen</span></span>
-        <span class="t-line"><span class="t-val">c2f1a8b</span> <span class="t-out">feat: QR code generation</span></span>
-        <span class="t-line"><span class="t-prompt">~/arspace $</span> <span class="cursor-blink"></span></span>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="row">
+        <h2>Skills</h2>
+        <dl class="skills">
+          <div><dt>Languages</dt><dd>JavaScript, HTML, CSS, Python, C++, Java</dd></div>
+          <div><dt>Frontend</dt><dd>React, Three.js, model-viewer, WebXR, WebGL</dd></div>
+          <div><dt>Backend</dt><dd>Supabase (database and storage), Node.js, REST APIs</dd></div>
+          <div><dt>Infrastructure</dt><dd>Vercel, Git and GitHub, Linux</dd></div>
+          <div><dt>Hardware</dt><dd>ESP32, Arduino, sensor networks, MQTT, serial</dd></div>
+        </dl>
       </div>
     </div>
-  </div>
-</section>
-<!-- ── EDUCATION ── -->
-<section id="education">
-  <div class="wrap">
-    <p class="section-label reveal">Education</p>
-    <div class="edu-card reveal">
-      <div class="edu-mark">BSc</div>
-      <div>
-        <h3 class="edu-degree">B.Sc. Informatics &amp; Telecommunications</h3>
-        <p class="edu-school"><span>University Of Peloponnese</span> · Department of Informatics &amp; Telecommunications</p>
-        <div class="edu-meta">
-          <span class="tag">1st Year</span>
-          <span class="tag">2025 — present</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ── IOT ── -->
-<section id="iot">
-  <div class="wrap">
-    <p class="section-label reveal">Live telemetry</p>
-    <div class="iot-card reveal">
-      <div>
-        <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.16em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;">ESP32 · Sensor Node · Lakonia, GR</p>
-        <h2 style="font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-0.02em;margin-bottom:12px;">IoT Weather Station</h2>
-        <p style="font-size:14px;color:var(--muted);line-height:1.7;max-width:480px;">Real-time environmental monitoring via a distributed network of sensors. Data streams every 4 seconds.</p>
-        <div class="iot-readings">
-          <div>
-            <p class="iot-key">Temperature</p>
-            <div class="iot-val" id="temp-val">--.-°</div>
-          </div>
-          <div>
-            <p class="iot-key">Humidity</p>
-            <div class="iot-val" id="hum-val">--%</div>
-          </div>
-        </div>
-      </div>
-      <div class="iot-visual">
-        <span class="iot-icon">🌡</span>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ── CONNECT ── -->
-<section id="connect">
-  <div class="wrap">
-    <p class="section-label reveal">Connect</p>
-    <h2 class="reveal" style="font-weight:800;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:-0.02em;max-width:600px;line-height:1.1;">
-      Always curious.<br>
-      <span style="color:var(--gold);">Sometimes useful.</span>
-    </h2>
-    <div class="connect-links reveal">
-      <a href="https://www.linkedin.com/in/marinosstamatopoulos/" target="_blank" class="connect-link">
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="wrap">
+      <div class="row">
+        <h2>Education</h2>
         <div>
-          <p class="connect-link-meta">Professional network</p>
-          <p class="connect-link-name">LinkedIn</p>
+          <p class="edu-degree">B.Sc. in Informatics and Telecommunications</p>
+          <p class="edu-lines">
+            <a class="text-link" href="https://www.uop.gr/" target="_blank" rel="noopener">University of the Peloponnese</a><br>
+            <a href="https://dit.uop.gr/" target="_blank" rel="noopener" style="text-decoration:none">Department of Informatics and Telecommunications</a>, Tripoli, Greece<br>
+            Second year, 2025 – present
+          </p>
         </div>
-        <span class="connect-link-arrow">↗</span>
-      </a>
-      <a href="https://github.com/MarStamSudo" target="_blank" class="connect-link">
-        <div>
-          <p class="connect-link-meta">Open source work</p>
-          <p class="connect-link-name">GitHub</p>
-        </div>
-        <span class="connect-link-arrow">↗</span>
-      </a>
-      <div class="connect-link" style="cursor:pointer;" onclick="copyEmail()">
-        <div>
-          <p class="connect-link-meta">Direct line</p>
-          <p class="connect-link-name" id="email-label">Email</p>
-        </div>
-        <span class="connect-link-arrow">↗</span>
       </div>
     </div>
-    <div class="footer-row reveal">
-      <p class="footer-email">marinosstamatopoulos@gmail.com</p>
-      <p class="footer-rev">REVISION 7.0 // 2026</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="band">
+    <div class="wrap">
+      <div class="row">
+        <h2>Contact</h2>
+        <div>
+          <p class="contact-email">
+            <a class="text-link" href="mailto:marstamsolutions@gmail.com">marstamsolutions@gmail.com</a>
+          </p>
+          <p class="contact-links">
+            <a class="text-link" href="https://www.linkedin.com/in/marinosstamatopoulos/" target="_blank" rel="me noopener">LinkedIn</a>
+            <a class="text-link" href="https://github.com/MarStamSudo" target="_blank" rel="me noopener">GitHub</a>
+            <a class="text-link" href="https://www.stamx.tech/" rel="me">STAMX Tech</a>
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Marinos Stamatopoulos</p>
+    <p>Founder of <a href="https://www.stamx.tech/">STAMX Tech</a></p>
   </div>
-</section>
-<div id="toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#C8A96E;color:#06060A;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;padding:10px 20px;border-radius:100px;opacity:0;transition:opacity 0.3s,transform 0.3s;pointer-events:none;z-index:9999;">Email copied ✓</div>
-<script>
-  // ── COPY EMAIL ──
-  function copyEmail() {
-    navigator.clipboard.writeText('marinosstamatopoulos@gmail.com').then(() => {
-      const label = document.getElementById('email-label');
-      label.textContent = 'Copied!';
-      setTimeout(() => label.textContent = 'Email', 2000);
-      const toast = document.getElementById('toast');
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateX(-50%) translateY(0)';
-      setTimeout(() => {
-        toast.style.opacity = '0';
-        toast.style.transform = 'translateX(-50%) translateY(20px)';
-      }, 2500);
-    });
-  }
-  // ── CURSOR GLOW ──
-  const glow = document.getElementById('glow');
-  if (window.innerWidth > 768) {
-    window.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top  = e.clientY + 'px';
-    });
-  }
-  // ── CARD SPOTLIGHT ──
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width  * 100).toFixed(1);
-      const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
-      card.style.setProperty('--mx', x + '%');
-      card.style.setProperty('--my', y + '%');
-    });
-  });
-  // ── SCROLL REVEAL ──
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  // ── SKILL BARS ──
-  const skillObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.skill-fill').forEach(bar => {
-          bar.style.width = bar.dataset.w;
-        });
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.skill-row') .forEach(el => skillObs.observe(el.parentElement));
-  // ── IOT DATA ──
-  function updateIoT() {
-    const temp = (18 + Math.random() * 10).toFixed(1);
-    const hum  = Math.floor(38 + Math.random() * 25);
-    const tEl  = document.getElementById('temp-val');
-    const hEl  = document.getElementById('hum-val');
-    tEl.style.opacity = hEl.style.opacity = '0.2';
-    setTimeout(() => {
-      tEl.textContent = temp + '°C';
-      hEl.textContent = hum  + '%';
-      tEl.style.opacity = hEl.style.opacity = '1';
-    }, 300);
-  }
-  setInterval(updateIoT, 4000);
-  updateIoT();
-  // ── QR ANIMATION ──
-  const qrGrid = document.getElementById('qr-anim');
-  if (qrGrid) {
-    for (let i = 0; i < 25; i++) {
-      const cell = document.createElement('div');
-      cell.className = 'qr-cell';
-      cell.style.setProperty('--o', Math.random() > 0.4 ? '0.85' : '0.08');
-      qrGrid.appendChild(cell);
-    }
-    setInterval(() => {
-      qrGrid.querySelectorAll('.qr-cell').forEach(c => {
-        if (Math.random() > 0.75) {
-          c.style.setProperty('--o', Math.random() > 0.4 ? '0.85' : '0.08');
-          c.style.transition = 'opacity 0.4s';
-        }
-      });
-    }, 800);
-  }
-  // ── KONAMI CODE EASTER EGG ──
-  const konami = [38,38,40,40,37,39,37,39,66,65];
-  let ki = 0;
-  document.addEventListener('keydown', e => {
-    if (e.keyCode === konami[ki]) {
-      ki++;
-      if (ki === konami.length) {
-        ki = 0;
-        document.body.style.animation = 'none';
-        const msg = document.createElement('div');
-        msg.style.cssText = `
-          position:fixed;inset:0;z-index:9999;
-          display:flex;align-items:center;justify-content:center;
-          background:rgba(6,6,10,0.95);
-          font-family:var(--mono);font-size:14px;color:var(--gold);
-          text-align:center;line-height:2;
-        `;
-        msg.innerHTML = `
-          [ ARCHITECT_OS :: KONAMI UNLOCKED ]<br>
-          <span style="font-size:11px;opacity:0.5;">
-            building ARspace · YC Fall 2026 · Lakonia → World<br>
-            <br>thanks for exploring :)
-          </span>
-        `;
-        msg.onclick = () => msg.remove();
-        document.body.appendChild(msg);
-      }
-    } else { ki = 0; }
-  });
-</script>
+</footer>
+
 </body>
 </html>
